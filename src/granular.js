@@ -20,7 +20,7 @@ btn2.on("click", () => {
 });
 
 const PARAMS = {
-  file: "/audio/pencil.wav",
+  file: "./audio/pencil.wav",
   startPos: 0.55,
   grainSize: 0.4,
   ramp: 0.2,
@@ -33,23 +33,23 @@ const PARAMS = {
 };
 
 const soundOptions = {
-  // pen: '/audio/pen.mp3',
-  pencil: "/audio/pencil.wav",
-  // chime: "/audio/chime.mp3",
-  // guitar: '/audio/guitar.mp3',
-  // claves: '/audio/claves.wav',
-  shutter: "/audio/shutter.wav",
-  // kalimba: "/audio/kalimba.wav",
-  carriage: "/audio/carriage-return.wav",
-  // robin: '/audio/robin.wav',
-  // opera: '/audio/opera.wav',
-  boing: "/audio/boingS.wav",
-  shaker: "/audio/shaker.wav",
-  // harp: "/audio/harp.wav",
-  // keyboard: '/audio/keyboard.wav',
-  keyclicks: "/audio/keyclicks.wav",
-  // maraca: "/audio/maraca.wav",
-  swoosh: "/audio/swoosh.wav",
+  // pen: './audio/pen.mp3',
+  pencil: "./audio/pencil.wav",
+  // chime: "./audio/chime.mp3",
+  // guitar: './audio/guitar.mp3',
+  // claves: './audio/claves.wav',
+  shutter: "./audio/shutter.wav",
+  // kalimba: "./audio/kalimba.wav",
+  carriage: "./audio/carriage-return.wav",
+  // robin: './audio/robin.wav',
+  // opera: './audio/opera.wav',
+  boing: "./audio/boingS.wav",
+  shaker: "./audio/shaker.wav",
+  // harp: "./audio/harp.wav",
+  // keyboard: './audio/keyboard.wav',
+  keyclicks: "./audio/keyclicks.wav",
+  // maraca: "./audio/maraca.wav",
+  swoosh: "./audio/swoosh.wav",
 };
 
 let fileInput = pane.addInput(PARAMS, "file", {
@@ -155,7 +155,7 @@ Object.values(soundOptions).forEach(async (url) => {
   console.log(url);
   let bufferPromise = await getData(url);
   buffers[url] = bufferPromise;
-  if (url === "/audio/pencil.wav") {
+  if (url === "./audio/pencil.wav") {
     selectFile(url);
   }
 });
@@ -283,7 +283,7 @@ async function tick() {
   // console.log(timeSinceLastHit)
   let timeBetweenHits = 1000 / PARAMS.density;
   if (isLoaded && timeSinceLastHit > timeBetweenHits) {
-    if (buffer !== (await buffers["/audio/keyclicks.wav"])) {
+    if (buffer !== (await buffers["./audio/keyclicks.wav"])) {
       playGrain(lfo);
       lastHit = Date.now();
     }
@@ -385,7 +385,7 @@ window.preset = (name) => {
 
   if (name === "pen") {
     pane.importPreset({
-      file: "/audio/pencil.wav",
+      file: "./audio/pencil.wav",
       startPos: 5.652173913043478,
       grainSize: 0.4,
       ramp: 0.2,
@@ -398,7 +398,7 @@ window.preset = (name) => {
   }
   if (name === "dots") {
     // pane.importPreset({
-    //   file: "/audio/shutter.wav",
+    //   file: "./audio/shutter.wav",
     //   startPos: 1.652173913043478,
     //   grainSize: 0.4,
     //   ramp: 0.2,
@@ -410,7 +410,7 @@ window.preset = (name) => {
     // });
   } else if (name === "brush") {
     pane.importPreset({
-      file: "/audio/swoosh.wav",
+      file: "./audio/swoosh.wav",
       startPos: 1.5217391304347827,
       grainSize: 0.4252173913043478,
       ramp: 0.2,
@@ -421,7 +421,7 @@ window.preset = (name) => {
       bandPass: 677.5916193656512,
     });
 
-    // file: "/audio/harp.wav",
+    // file: "./audio/harp.wav",
     // startPos: 2.0652173913043477,
     // grainSize: 0.3866304347826087,
     // ramp: 0.2,
@@ -433,7 +433,7 @@ window.preset = (name) => {
     // });
     // } else if (name === "line") {
     //   pane.importPreset({
-    //     file: "/audio/shaker.wav",
+    //     file: "./audio/shaker.wav",
     //     startPos: 1.5217391304347827,
     //     grainSize: 0.2252173913043478,
     //     ramp: 0.2,
@@ -444,7 +444,7 @@ window.preset = (name) => {
     // }
     //  else if (name === "spiral") {
     //   pane.importPreset({
-    //     file: "/audio/maraca.wav",
+    //     file: "./audio/maraca.wav",
     //     startPos: 0.0,
     //     grainSize: 0.2252173913043478,
     //     ramp: 0.2,
@@ -454,7 +454,7 @@ window.preset = (name) => {
     //   });
   } else if (name === "erase") {
     pane.importPreset({
-      file: "/audio/shutter.wav",
+      file: "./audio/shutter.wav",
       startPos: 0,
       grainSize: 0.21445652173913043,
       ramp: 0.2,

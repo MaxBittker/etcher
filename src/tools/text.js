@@ -58,7 +58,7 @@ class Text {
         this.typing = true;
         if (event.keyCode == 13) {
           playSingleGrain({
-            url: "/audio/carriage-return.wav",
+            url: "./audio/carriage-return.wav",
             grainSize: 3,
             startPos: 0,
             gain: 0.4,
@@ -68,7 +68,7 @@ class Text {
           }
         } else {
           playSingleGrain({
-            url: "/audio/keyclicks.wav",
+            url: "./audio/keyclicks.wav",
             grainSize: 0.6,
             startPos: positions[this.soundI % positions.length],
           });
