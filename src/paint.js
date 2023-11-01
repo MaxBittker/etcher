@@ -88,7 +88,7 @@ function undo() {
   let positions = [0.1, 1.5, 4.6, 7.93, 12];
 
   playSingleGrain({
-    url: "assets/audio/boingS.wav",
+    url: "public/audio/boingS.wav",
     grainSize: 1.5,
     startPos: positions[undoStack.length % positions.length],
   });
@@ -481,7 +481,7 @@ panelButtons.forEach((btn) => {
         break;
       case "erase":
         // window.preset("spiral")
-        // window.params.file = "assets/audio/shutter.wav";
+        // window.params.file = "public/audio/shutter.wav";
         window.preset("erase");
 
         break;
@@ -496,19 +496,19 @@ panelButtons.forEach((btn) => {
         window.preset("spiral");
         break;
       case "fill":
-        window.params.file = "assets/audio/harp.wav";
+        window.params.file = "public/audio/harp.wav";
         break;
       case "rect":
-        window.params.file = "assets/audio/boing.wav";
+        window.params.file = "public/audio/boing.wav";
         break;
       case "spray":
-        window.params.file = "assets/audio/shutter.wav";
+        window.params.file = "public/audio/shutter.wav";
         break;
       case "line":
         window.preset("line");
         break;
       case "text":
-        window.params.file = "assets/audio/keyclicks.wav";
+        window.params.file = "public/audio/keyclicks.wav";
         break;
     }
     console.log(window.params.file);
@@ -517,7 +517,7 @@ panelButtons.forEach((btn) => {
 
     if (btn.id === "text") {
       playSingleGrain({
-        url: "assets/audio/keyclicks.wav",
+        url: "public/audio/keyclicks.wav",
         grainSize: 0.4,
         startPos: 1.25,
       });
@@ -583,7 +583,7 @@ sendBtn.addEventListener("click", () => {
   if (sent) return;
   sent = true;
   activeTool?.deselect && activeTool.deselect();
-  sendBtn.innerHTML = '<img src="assets/icons/sent.png">';
+  sendBtn.innerHTML = '<img src="public/icons/sent.png">';
   // send canvas to server
   let finalCanvas = document.createElement("canvas");
   finalCanvas.width = pixelBounds[2] - pixelBounds[0];
@@ -622,7 +622,7 @@ sendBtn.addEventListener("click", () => {
     .then((res) => res.json())
     .then((response) => {
       playSingleGrain({
-        url: "assets/audio/swoosh.wav",
+        url: "public/audio/swoosh.wav",
         grainSize: 10,
         startPos: 0,
         gain: 1.0,

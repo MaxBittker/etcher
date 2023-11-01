@@ -20,7 +20,7 @@ btn2.on("click", () => {
 });
 
 const PARAMS = {
-  file: "assets/audio/pencil.wav",
+  file: "public/audio/pencil.wav",
   startPos: 0.55,
   grainSize: 0.4,
   ramp: 0.2,
@@ -33,23 +33,23 @@ const PARAMS = {
 };
 
 const soundOptions = {
-  // pen: 'assets/audio/pen.mp3',
-  pencil: "assets/audio/pencil.wav",
-  // chime: "assets/audio/chime.mp3",
-  // guitar: 'assets/audio/guitar.mp3',
-  // claves: 'assets/audio/claves.wav',
-  shutter: "assets/audio/shutter.wav",
-  // kalimba: "assets/audio/kalimba.wav",
-  carriage: "assets/audio/carriage-return.wav",
-  // robin: 'assets/audio/robin.wav',
-  // opera: 'assets/audio/opera.wav',
-  boing: "assets/audio/boingS.wav",
-  shaker: "assets/audio/shaker.wav",
-  // harp: "assets/audio/harp.wav",
-  // keyboard: 'assets/audio/keyboard.wav',
-  keyclicks: "assets/audio/keyclicks.wav",
-  // maraca: "assets/audio/maraca.wav",
-  swoosh: "assets/audio/swoosh.wav",
+  // pen: 'public/audio/pen.mp3',
+  pencil: "public/audio/pencil.wav",
+  // chime: "public/audio/chime.mp3",
+  // guitar: 'public/audio/guitar.mp3',
+  // claves: 'public/audio/claves.wav',
+  shutter: "public/audio/shutter.wav",
+  // kalimba: "public/audio/kalimba.wav",
+  carriage: "public/audio/carriage-return.wav",
+  // robin: 'public/audio/robin.wav',
+  // opera: 'public/audio/opera.wav',
+  boing: "public/audio/boingS.wav",
+  shaker: "public/audio/shaker.wav",
+  // harp: "public/audio/harp.wav",
+  // keyboard: 'public/audio/keyboard.wav',
+  keyclicks: "public/audio/keyclicks.wav",
+  // maraca: "public/audio/maraca.wav",
+  swoosh: "public/audio/swoosh.wav",
 };
 
 let fileInput = pane.addInput(PARAMS, "file", {
@@ -155,7 +155,7 @@ Object.values(soundOptions).forEach(async (url) => {
   console.log(url);
   let bufferPromise = await getData(url);
   buffers[url] = bufferPromise;
-  if (url === "assets/audio/pencil.wav") {
+  if (url === "public/audio/pencil.wav") {
     selectFile(url);
   }
 });
@@ -283,7 +283,7 @@ async function tick() {
   // console.log(timeSinceLastHit)
   let timeBetweenHits = 1000 / PARAMS.density;
   if (isLoaded && timeSinceLastHit > timeBetweenHits) {
-    if (buffer !== (await buffers["assets/audio/keyclicks.wav"])) {
+    if (buffer !== (await buffers["public/audio/keyclicks.wav"])) {
       playGrain(lfo);
       lastHit = Date.now();
     }
@@ -385,7 +385,7 @@ window.preset = (name) => {
 
   if (name === "pen") {
     pane.importPreset({
-      file: "assets/audio/pencil.wav",
+      file: "public/audio/pencil.wav",
       startPos: 5.652173913043478,
       grainSize: 0.4,
       ramp: 0.2,
@@ -398,7 +398,7 @@ window.preset = (name) => {
   }
   if (name === "dots") {
     // pane.importPreset({
-    //   file: "assets/audio/shutter.wav",
+    //   file: "public/audio/shutter.wav",
     //   startPos: 1.652173913043478,
     //   grainSize: 0.4,
     //   ramp: 0.2,
@@ -410,7 +410,7 @@ window.preset = (name) => {
     // });
   } else if (name === "brush") {
     pane.importPreset({
-      file: "assets/audio/swoosh.wav",
+      file: "public/audio/swoosh.wav",
       startPos: 1.5217391304347827,
       grainSize: 0.4252173913043478,
       ramp: 0.2,
@@ -421,7 +421,7 @@ window.preset = (name) => {
       bandPass: 677.5916193656512,
     });
 
-    // file: "assets/audio/harp.wav",
+    // file: "public/audio/harp.wav",
     // startPos: 2.0652173913043477,
     // grainSize: 0.3866304347826087,
     // ramp: 0.2,
@@ -433,7 +433,7 @@ window.preset = (name) => {
     // });
     // } else if (name === "line") {
     //   pane.importPreset({
-    //     file: "assets/audio/shaker.wav",
+    //     file: "public/audio/shaker.wav",
     //     startPos: 1.5217391304347827,
     //     grainSize: 0.2252173913043478,
     //     ramp: 0.2,
@@ -444,7 +444,7 @@ window.preset = (name) => {
     // }
     //  else if (name === "spiral") {
     //   pane.importPreset({
-    //     file: "assets/audio/maraca.wav",
+    //     file: "public/audio/maraca.wav",
     //     startPos: 0.0,
     //     grainSize: 0.2252173913043478,
     //     ramp: 0.2,
@@ -454,7 +454,7 @@ window.preset = (name) => {
     //   });
   } else if (name === "erase") {
     pane.importPreset({
-      file: "assets/audio/shutter.wav",
+      file: "public/audio/shutter.wav",
       startPos: 0,
       grainSize: 0.21445652173913043,
       ramp: 0.2,
